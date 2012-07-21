@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang='en' ng-app> 
+    <head>
+        <meta content='utf-8'>
+        <script type='text/javascript' src='js/angular.js'></script>
+        <script type='text/javascript' src='js/script.js'></script>
+        <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.css' />
+        <link rel='stylesheet' type='text/css' href='css/style.css' />
+    </head>
+    <body>
+        <div class='container' ng-controller='CardController'>
+            <div class='row'>
+                <div class='span4' ng-repeat='card in cards'>
+                    <span class='question'>{{card.question}}</span>
+                    <span class='answer'>{{card.answer}}</span>
+                    <div class='tags'>
+                        <span class='tag'
+                              ng-repeat='tag in card.tags'>{{tag.name}}</span>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </body>
+</html>
