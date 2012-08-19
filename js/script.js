@@ -30,12 +30,14 @@ var CardView = Backbone.View.extend({
 function renderCard(card_id) {
   var card = new CardItem({ id: card_id });
   var card_view = new CardView({ model: card});
+
   card.fetch();
 }
 
 // Testing the creation of a single card
 function createCard(question, answer, difficulty, tags) {
   var card = new CardItem();
+
   card.set({ question: question });
   card.set({ answer: answer});
   card.set({ difficulty: difficulty});
