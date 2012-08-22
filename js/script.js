@@ -1,3 +1,6 @@
+// Strict Mode engaged!
+'use strict';
+
 // Setting up Card Model with our RESTful API
 var Card = Backbone.Model.extend({
   urlRoot: 'http://localhost:8124/cards'
