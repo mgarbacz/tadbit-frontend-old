@@ -72,9 +72,9 @@ function createCard(question, answer, difficulty, tags) {
   var card = new Card();
 
   card.set({ question: question });
-  card.set({ answer: answer});
-  card.set({ difficulty: difficulty});
-  card.set({ tags: tags});
+  card.set({ answer: answer });
+  card.set({ difficulty: difficulty });
+  card.set({ tags: tags });
 
   card.save();
 }
