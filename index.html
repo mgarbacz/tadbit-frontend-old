@@ -10,8 +10,32 @@
   <div class="wrapper">
     <div class="container">
       <header>
+        <h1>Tadbit</h1>
       </header>
-      <div id="card_collection" class="row">
+      <div class="row">
+        <form id="card_add" class="span6">
+          <fieldset>
+            <label for="input_question">Question</label>
+            <input type="text" id="input_question" />
+            <label for="input_answer">Answer</label>
+            <input type="text" id="input_answer" />
+            <label for="input_difficulty">Difficulty</label>
+            <select id="input_difficulty">
+              <option>easy</option>
+              <option>medium</option>
+              <option>hard</option>
+            </select>
+            <label for="input_tags">Tags</label>
+            <input type="text" id="input_tags" />
+            <div>
+              <button id="add_submit" type="button"
+                      class="btn btn-success">Submit</button>
+              <button type="reset" class="btn">Reset</button>
+            </div>
+          </fieldset>
+        </form>
+        <div id="card_collection" class="span6">
+        </div>
       </div>
     </div>
   </div>

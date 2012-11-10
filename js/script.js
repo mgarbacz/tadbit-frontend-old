@@ -65,6 +65,14 @@ $(document).ready(function() {
   });
 
   card_collection.fetch();
+
+  $('#add_submit').click( function() {
+    createCard($('#input_question').val(),
+               $('#input_answer').val(),
+               $('#input_difficulty').val(),
+               $('#input_tags').val());
+    $(this).reset();
+  });
 });
 
 // Testing the creation of a single card
