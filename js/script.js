@@ -4,11 +4,19 @@
 // Temporary root for router
 var APP_ROOT = '/~michal/tadbit/';
 // Temporary url for api
-var API_URL = 'http://localhost:8124/cards'
+var API_URL = 'http://localhost:8124/cards';
 
 // Setting up Card Model with our RESTful API
 var Card = Backbone.Model.extend({
-  urlRoot: API_URL
+  urlRoot: API_URL,
+  // TODO: THIS IS BAD, fix error-checking
+  defaults: {
+    _id: '',
+    question: '',
+    answer: '',
+    difficulty: '',
+    tags: ''
+  }
 });
 
 // Setting up Card View
@@ -26,6 +34,7 @@ var CardView = Backbone.View.extend({
     // Setting element id to card id from database
     this.el.id = this.model.attributes._id;
     // Setting the HTML to the template filled with the model's data
+    console.log(this.model.toJSON());
     $(this.el).html(this.template(this.model.toJSON()));
     return this;
   },
@@ -66,7 +75,7 @@ var CardCollectionView = Backbone.View.extend({
 
 // Setting up the whole app definition
 var TadbitApp = new (Backbone.Router.extend({
-  routes:  { '': 'index' },
+  routes:  { '': 'index', 'cards/:id': 'show_card'},
 
   initialize: function() {
     this.cardCollection = new CardCollection();
@@ -84,6 +93,14 @@ var TadbitApp = new (Backbone.Router.extend({
 
   index: function() {
     this.cardCollection.fetch();
+  },
+
+  show_card: function(id) {
+    // TODO: UGLY, make betters
+    var card = new Card({ id: id });
+    var cardView = new CardView({ model: card});
+    $('#card_collection').html(cardView.render().el);
+    card.fetch();
   }
 }));
 
@@ -98,7 +115,8 @@ $(function() {
                $('#input_answer').val(),
                $('#input_difficulty').val(),
                $('#input_tags').val());
-    $(this).reset();
+    // Making sure to reset the form when done
+    $('#add_reset').click();
   });
 });
 
