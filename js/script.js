@@ -2,11 +2,13 @@
 'use strict';
 
 // Temporary root for router
-var tempRoot = '/~michal/tadbit/';
+var APP_ROOT = '/~michal/tadbit/';
+// Temporary url for api
+var API_URL = 'http://localhost:8124/cards'
 
 // Setting up Card Model with our RESTful API
 var Card = Backbone.Model.extend({
-  urlRoot: 'http://localhost:8124/cards'
+  urlRoot: API_URL
 });
 
 // Setting up Card View
@@ -36,7 +38,7 @@ var CardView = Backbone.View.extend({
 // Setting up Card Collection with our RESTful API
 var CardCollection = Backbone.Collection.extend({
   model: Card,
-  url: 'http://localhost:8124/cards'
+  url: API_URL
 });
 
 // Setting up Card Collection View
@@ -76,7 +78,7 @@ var TadbitApp = new (Backbone.Router.extend({
   start: function() {
     Backbone.history.start({
       pushState: true,
-      root: tempRoot
+      root: APP_ROOT
     });
   },
 
