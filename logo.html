@@ -13,6 +13,7 @@
   // 3/4ths of a circle, top exposed
   context.strokeStyle = mainColor;
   context.lineWidth = 50;
+  context.lineCap = 'round';
   context.beginPath();
   context.arc(200, 200, 150, -0.25 * Math.PI, 1.25 * Math.PI, false);
   context.stroke();
@@ -29,6 +30,7 @@
   // Tadpole legs
   context.strokeStyle = mainColor;
   context.lineWidth = 20;
+  context.lineCap = 'round';
   context.beginPath();
   context.moveTo(160, 140);
   context.lineTo(150, 80);

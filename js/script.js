@@ -140,6 +140,7 @@ $(function() {
   // 3/4ths of a circle, top exposed
   context.strokeStyle = mainColor;
   context.lineWidth = 6;
+  context.lineCap = 'round';
   context.beginPath();
   context.arc(20, 20, 15, -0.25 * Math.PI, 1.25 * Math.PI, false);
   context.stroke();
@@ -156,6 +157,7 @@ $(function() {
   // Tadpole legs
   context.strokeStyle = mainColor;
   context.lineWidth = 2;
+  context.lineCap = 'round';
   context.beginPath();
   context.moveTo(16, 14);
   context.lineTo(15, 8);
