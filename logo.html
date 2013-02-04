@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head></head>
+<body><canvas id="logo" width="400" height="400"></canvas></body>
+<script>
+  var logoCanvas = document.getElementById('logo');
+  var context = logoCanvas.getContext('2d');
+
+  // Style for circle and tadpole
+  var mainColor = '#bb4444';
+  var pairColor = '#fafafa';
+
+  // 3/4ths of a circle, top exposed
+  context.strokeStyle = mainColor;
+  context.lineWidth = 50;
+  context.beginPath();
+  context.arc(200, 200, 150, -0.25 * Math.PI, 1.25 * Math.PI, false);
+  context.stroke();
+  context.closePath();
+
+  // Tadpole tail
+  context.fillStyle = mainColor;
+  context.beginPath();
+  context.moveTo(160, 150);
+  context.quadraticCurveTo(200, -150, 240, 150);
+  context.fill();
+  context.closePath();
+
+  // Tadpole legs
+  context.strokeStyle = mainColor;
+  context.lineWidth = 20;
+  context.beginPath();
+  context.moveTo(160, 140);
+  context.lineTo(150, 80);
+  context.moveTo(240, 140);
+  context.lineTo(250, 80);
+  context.stroke();
+  context.closePath();
+
+  // Tadpole head
+  context.fillStyle = mainColor;
+  context.beginPath();
+  context.arc(200, 200, 80, 0, 2 * Math.PI, false);
+  context.fill();
+  context.closePath();
+
+  // Tadpole eyes
+  context.beginPath();
+  context.fillStyle = pairColor;
+  context.arc(170, 220, 20, 0, 2 * Math.PI, false);
+  context.arc(230, 220, 20, 0, 2 * Math.PI, false);
+  context.fill();
+  context.closePath();
+</script>
+</html>
