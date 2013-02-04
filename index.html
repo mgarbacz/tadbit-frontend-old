@@ -23,30 +23,30 @@
         <h3 class="span4">Tags</h3>
       </div>
       <div class="row">
-        <form id="card_add" class="span4">
+        <form id="card-add" class="span4">
           <fieldset>
-            <label for="input_question">Question</label>
-            <input type="text" id="input_question" />
-            <label for="input_answer">Answer</label>
-            <input type="text" id="input_answer" />
-            <label for="input_difficulty">Difficulty</label>
-            <select id="input_difficulty">
+            <label for="input-question">Question</label>
+            <input type="text" id="input-question" />
+            <label for="input-answer">Answer</label>
+            <input type="text" id="input-answer" />
+            <label for="input-difficulty">Difficulty</label>
+            <select id="input-difficulty">
               <option>easy</option>
               <option>medium</option>
               <option>hard</option>
             </select>
-            <label for="input_tags">Tags</label>
-            <input type="text" id="input_tags" />
+            <label for="input-tags">Tags</label>
+            <input type="text" id="input-tags" />
             <div>
-              <button id="add_submit" type="button"
+              <button id="add-submit" type="button"
                       class="btn btn-primary">Submit</button>
-              <button id="add_reset" type="reset"
+              <button id="add-reset" type="reset"
                       class="btn">Reset</button>
             </div>
           </fieldset>
         </form>
-        <div id="card_collection" class="span4"></div>
-        <div id="tag_collection" class="span4"></div>
+        <div id="card-collection" class="span4"></div>
+        <div id="tag-collection" class="span4"></div>
       </div>
     </div>
   </div>
@@ -55,8 +55,8 @@
     </div>
   </footer>
 </body>
-<script type="text/template" id="card_template">
-  <li class="card_id"><%= _id %></li>
+<script type="text/template" id="card-template">
+  <li class="card-id"><%= _id %></li>
   <li class="question"><%= question %></li>
   <li class="answer"><%= answer %></li>
   <li class="difficulty"><%= difficulty %></li>

@@ -23,7 +23,7 @@ var Card = Backbone.Model.extend({
 var CardView = Backbone.View.extend({
   tagName: 'ul',
   className: 'card span4',
-  template: _.template( $('#card_template').html() ),
+  template: _.template( $('#card-template').html() ),
 
   events: {
     "click": "display"
@@ -61,7 +61,7 @@ var CardCollection = Backbone.Collection.extend({
 // Setting up Card Collection View
 var CardCollectionView = Backbone.View.extend({
   // Linking to element on the page
-  el: $('#card_collection'),
+  el: $('#card-collection'),
 
   initialize: function() {
     this.collection.on('reset', this.render, this);
@@ -120,15 +120,16 @@ $(function() {
   TadbitApp.start();
 
   // Temp solution to add cards via form
-  $('#add_submit').click( function() {
-    createCard($('#input_question').val(),
-               $('#input_answer').val(),
-               $('#input_difficulty').val(),
-               $('#input_tags').val());
+  $('#add-submit').click( function() {
+    createCard($('#input-question').val(),
+               $('#input-answer').val(),
+               $('#input-difficulty').val(),
+               $('#input-tags').val());
     // Making sure to reset the form when done
-    $('#add_reset').click();
+    $('#add-reset').click();
   });
 
+  // Logo stuff, TODO move to its own file
   var logoCanvas = $('#logo')[0];
   var context = logoCanvas.getContext('2d');
 
@@ -178,20 +179,6 @@ $(function() {
   context.fill();
   context.closePath();
 
-  /*
-  // line going down through to middle of circle
-  context.beginPath();
-  context.moveTo(20, 0);
-  context.lineTo(20, 20);
-  context.stroke();
-  context.closePath();
-
-  // Circle at the end of line
-  context.beginPath();
-  context.arc(20, 22, 5, 0, 2 * Math.PI, false);
-  context.fill();
-  context.closePath();
-  */
 });
 
 // Testing the creation of a single card
