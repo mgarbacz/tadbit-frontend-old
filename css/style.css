@@ -2,17 +2,36 @@ html, body {
   height:100%;
 }
 body {
-  color:#555;
   background-color:#fafafa;
+  color:#555;
+}
+
+header {
+  background-color:#44bbbb;
+  color:#fafafa;
+}
+header canvas#logo {
+  margin:10px 10px 10px 30px;
+}
+header span#bit {
+  color:#bb4444;
 }
 
 .wrapper {
-  min-height:100%;
+  height:100%;
   margin-bottom:-100px;
 }
 
+.btn-primary {
+  background-color:#44bbbb;
+  background-image:-webkit-linear-gradient(top, #7ccfcf, #308383);
+}
+.btn-primary:hover {
+  background-color:#308383;
+}
+
 footer {
-  color:#F5F5F5;
-  background-color:#66ff66;
+  background-color:#44bbbb;
+  color:#fafafa;
   height:100px;
 }
