@@ -25,6 +25,10 @@ var CardView = Backbone.View.extend({
   className: 'card span4',
   template: _.template( $('#card_template').html() ),
 
+  events: {
+    "click": "display"
+  },
+
   initialize: function() {
     this.model.on('change', this.render, this);
     this.model.on('destroy', this.remove, this);
@@ -41,6 +45,10 @@ var CardView = Backbone.View.extend({
 
   remove: function() {
     $(this.el).remove();
+  },
+
+  display: function() {
+    TadbitApp.navigate('cards/' + this.model.attributes._id, true);
   }
 });
 
@@ -61,6 +69,8 @@ var CardCollectionView = Backbone.View.extend({
   },
 
   render: function() {
+    // Clear in case
+    $(this.el).html('');
     // Using addCard method to preserve context of 'this' in forEach
     this.collection.forEach(this.addCard, this);
   },
@@ -99,8 +109,8 @@ var TadbitApp = new (Backbone.Router.extend({
     // TODO: UGLY, make betters
     var card = new Card({ id: id });
     var cardView = new CardView({ model: card});
-    $('#card_collection').html(cardView.render().el);
     card.fetch();
+    $('#card_collection').html(cardView.render().el);
   }
 }));
 
