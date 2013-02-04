@@ -128,6 +128,70 @@ $(function() {
     // Making sure to reset the form when done
     $('#add_reset').click();
   });
+
+  var logoCanvas = $('#logo')[0];
+  var context = logoCanvas.getContext('2d');
+
+  // Style for circle and tadpole
+  var mainColor = '#bb4444';
+  var pairColor = '#fafafa';
+
+  // 3/4ths of a circle, top exposed
+  context.strokeStyle = mainColor;
+  context.lineWidth = 6;
+  context.beginPath();
+  context.arc(20, 20, 15, -0.25 * Math.PI, 1.25 * Math.PI, false);
+  context.stroke();
+  context.closePath();
+
+  // Tadpole tail
+  context.fillStyle = mainColor;
+  context.beginPath();
+  context.moveTo(16, 15);
+  context.quadraticCurveTo(20, -15, 24, 15);
+  context.fill();
+  context.closePath();
+
+  // Tadpole legs
+  context.strokeStyle = mainColor;
+  context.lineWidth = 2;
+  context.beginPath();
+  context.moveTo(16, 14);
+  context.lineTo(15, 8);
+  context.moveTo(24, 14);
+  context.lineTo(25, 8);
+  context.stroke();
+  context.closePath();
+
+  // Tadpole head
+  context.fillStyle = mainColor;
+  context.beginPath();
+  context.arc(20, 20, 8, 0, 2 * Math.PI, false);
+  context.fill();
+  context.closePath();
+
+  // Tadpole eyes
+  context.beginPath();
+  context.fillStyle = pairColor;
+  context.arc(17, 22, 2, 0, 2 * Math.PI, false);
+  context.arc(23, 22, 2, 0, 2 * Math.PI, false);
+  context.fill();
+  context.closePath();
+
+  /*
+  // line going down through to middle of circle
+  context.beginPath();
+  context.moveTo(20, 0);
+  context.lineTo(20, 20);
+  context.stroke();
+  context.closePath();
+
+  // Circle at the end of line
+  context.beginPath();
+  context.arc(20, 22, 5, 0, 2 * Math.PI, false);
+  context.fill();
+  context.closePath();
+  */
 });
 
 // Testing the creation of a single card
