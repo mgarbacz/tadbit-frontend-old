@@ -30,6 +30,17 @@ header span#bit {
   background-color:#308383;
 }
 
+#card-collection ul, #tag-collection ul {
+  margin-left:0;
+  list-style:none;
+  border:1px solid #44bbbb;
+  border-radius:20px;
+  padding:10px 0;
+}
+#card-collection li, #tag-collection li {
+  margin:0 20px;
+}
+
 footer {
   background-color:#44bbbb;
   color:#fafafa;
