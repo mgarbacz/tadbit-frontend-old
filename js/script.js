@@ -2,9 +2,9 @@
 'use strict';
 
 // Temporary root for router
-var APP_ROOT = '/~michal/tadbit/';
+var APP_ROOT = '/';
 // Temporary url for api
-var API_URL = 'http://localhost:8124/cards';
+var API_URL = 'http://tadbit.herokuapp.com/cards';
 
 // Setting up Card Model with our RESTful API
 var Card = Backbone.Model.extend({
