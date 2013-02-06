@@ -19,7 +19,7 @@ header span#bit {
 
 .wrapper {
   height:100%;
-  margin-bottom:-100px;
+  margin-bottom:100px;
 }
 
 .btn-primary {
@@ -44,5 +44,8 @@ header span#bit {
 footer {
   background-color:#44bbbb;
   color:#fafafa;
+  position:absolute;
+  bottom:0;
+  width:100%;
   height:100px;
 }
