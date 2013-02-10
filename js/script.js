@@ -70,7 +70,7 @@ var CardCollectionView = Backbone.View.extend({
 
   render: function() {
     // Clear in case
-    $(this.el).html('');
+    $(this.el).empty();
     // Using addCard method to preserve context of 'this' in forEach
     this.collection.forEach(this.addCard, this);
   },
