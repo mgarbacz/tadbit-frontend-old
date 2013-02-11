@@ -1,10 +1,12 @@
 // Strict Mode engaged!
 'use strict';
 
-// Temporary root for router
 var APP_ROOT = '/';
-// Temporary url for api
+// Local root for router
+// APP_ROOT = '/~michal/tadbit/';
 var API_URL = 'http://tadbit.herokuapp.com/cards';
+// Local url for api
+// API_URL = 'http://localhost:5000/cards';
 
 // Setting up Card Model with our RESTful API
 var Card = Backbone.Model.extend({
@@ -48,6 +50,7 @@ var CardView = Backbone.View.extend({
   },
 
   display: function() {
+    alert("stuff");
     Backbone.history.navigate('cards/' + this.model.attributes._id, {
       trigger: true
     });
