@@ -6,6 +6,11 @@ body {
   color:#555;
 }
 
+#wrapper {
+  min-height:100%;
+  position:relative;
+}
+
 header {
   background-color:#44bbbb;
   color:#fafafa;
@@ -17,9 +22,8 @@ header span#bit {
   color:#bb4444;
 }
 
-.wrapper {
-  height:100%;
-  margin-bottom:100px;
+#main {
+  padding-bottom:100px;
 }
 
 .btn-primary {
@@ -41,15 +45,10 @@ header span#bit {
   margin:0 20px;
 }
 
-.footer-push {
-  height:100px;
-  clear:both;
-}
-
 footer {
   background-color:#44bbbb;
   color:#fafafa;
-  position:fixed;
+  position:absolute;
   bottom:0;
   width:100%;
   height:100px;
