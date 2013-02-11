@@ -48,7 +48,9 @@ var CardView = Backbone.View.extend({
   },
 
   display: function() {
-    TadbitApp.navigate('cards/' + this.model.attributes._id, true);
+    Backbone.history.navigate('cards/' + this.model.attributes._id, {
+      trigger: true
+    });
   }
 });
 
