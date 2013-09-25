@@ -45,11 +45,11 @@ header span#bit {
   margin:0 20px;
 }
 
-#card-collection-loading p {
+.collection-loading p {
   font-style: italic;
   text-align: center;
 }
-#card-collection-loading img {
+.collection-loading img {
   margin: 0 auto;
   display: block;
 }
