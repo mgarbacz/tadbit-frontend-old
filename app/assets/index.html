@@ -4,7 +4,7 @@
   <meta content="utf-8">
   <link rel="stylesheet" type="text/css"
         href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="ss/app.css" />
 </head>
 <body>
   <div id="wrapper">
@@ -63,25 +63,25 @@
       </div>
     </footer>
   </div>
+  <script type="text/template" id="card-template">
+    <li class="card-id"><%= _id %></li>
+    <li class="question"><%= question %></li>
+    <li class="answer"><%= answer %></li>
+    <li class="difficulty"><%= difficulty %></li>
+    <li class="tags"><%= tags %></li>
+  </script>
+  <script type="text/javascript"
+          src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+  </script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js">
+  </script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js">
+  </script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
-<script type="text/template" id="card-template">
-  <li class="card-id"><%= _id %></li>
-  <li class="question"><%= question %></li>
-  <li class="answer"><%= answer %></li>
-  <li class="difficulty"><%= difficulty %></li>
-  <li class="tags"><%= tags %></li>
-</script>
-<script type="text/javascript"
-        src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-</script>
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js">
-</script>
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js">
-</script>
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/bootstrap.min.js">
-</script>
-<script type="text/javascript" src="js/script.js"></script>
 </html>

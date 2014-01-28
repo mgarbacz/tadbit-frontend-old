@@ -4,3 +4,5 @@
 .DS_Store
 # NPM packages
 node_modules
+# Generated web app dir
+public
