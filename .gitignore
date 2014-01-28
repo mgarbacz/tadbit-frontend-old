@@ -2,3 +2,5 @@
 *.swp
 # Mac file system
 .DS_Store
+# NPM packages
+node_modules
