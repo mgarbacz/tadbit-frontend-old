@@ -42,10 +42,9 @@ var TadbitApp = new (Backbone.Router.extend({
 
   show_card: function(id) {
     // TODO: UGLY, make betters
-    var card = new Card({ id: id });
+    var card = this.cardCollection.get(id);
     var cardView = new CardView({ model: card});
-    card.fetch();
-    $('#card_collection').html(cardView.render().el);
+    $('#card-collection').html(cardView.render().el);
   }
 }));
 

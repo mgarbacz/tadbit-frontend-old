@@ -13,8 +13,6 @@ module.exports = CardView = Backbone.View.extend({
   },
 
   render: function() {
-    // Setting element id to card id from database
-    this.el.id = this.model.attributes._id;
     // Setting the HTML to the template filled with the model's data
     console.log(this.model.toJSON());
     $(this.el).html(this.template(this.model.toJSON()));
