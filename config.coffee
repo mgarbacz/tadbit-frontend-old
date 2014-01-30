@@ -15,4 +15,4 @@ exports.config =
     sass:
       debug: 'comments'
 
-  sourceMaps: false
+  sourceMaps: true
