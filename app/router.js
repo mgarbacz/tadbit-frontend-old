@@ -5,7 +5,11 @@ var CardModel = require('models/card'),
     config = require('config');
 
 module.exports = TadbitRouter = Backbone.Router.extend({
-  routes:  { '': 'index', 'cards/:id': 'show_card'},
+  routes:  {
+    '': 'index',
+    'cards/:id': 'showCard',
+    'cards/new': 'newCard'
+  },
 
   initialize: function() {
     this.cardCollection = new CardCollection();
@@ -25,10 +29,14 @@ module.exports = TadbitRouter = Backbone.Router.extend({
     this.cardCollection.fetch();
   },
 
-  show_card: function(id) {
+  showCard: function(id) {
     // TODO: UGLY, make betters
     var cardModel = this.cardCollection.get(id);
     var cardView = new CardView({ model: cardModel});
     $('#card-collection').html(cardView.render().el);
+  },
+
+  newCard: function() {
+    console.log('New card page');
   }
 });
