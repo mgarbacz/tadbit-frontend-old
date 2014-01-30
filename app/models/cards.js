@@ -1,4 +1,6 @@
+var config = require('config');
+
 module.exports = CardCollection = Backbone.Collection.extend({
   model: Card,
-  url: API_URL
+  url: config.apiUrl
 });

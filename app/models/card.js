@@ -1,5 +1,7 @@
+var config = require('config');
+
 module.exports = Card = Backbone.Model.extend({
-  urlRoot: API_URL,
+  urlRoot: config.apiUrl,
   idAttribute: '_id',
   // TODO: THIS IS BAD, fix error-checking
   defaults: {

@@ -1,57 +1,11 @@
-// config
-APP_ROOT = '/';
-// Local root for router
-APP_ROOT = '/~michal/tadbit/public/';
-API_URL = 'http://tadbit.herokuapp.com/cards';
-// Local url for api
-API_URL = 'http://localhost:8124/cards';
-
-// Setting up Card Model with our RESTful API
-var Card = require('models/card');
-
-// Setting up Card View
-var CardView = require('views/card');
-
-// Setting up Card Collection with our RESTful API
-var CardCollection = require('models/cards');
-
-// Setting up Card Collection View
-var CardCollectionView = require('views/cards');
-
-// Setting up the whole app definition
-var TadbitApp = new (Backbone.Router.extend({
-  routes:  { '': 'index', 'cards/:id': 'show_card'},
-
-  initialize: function() {
-    this.cardCollection = new CardCollection();
-    this.cardCollectionView = new CardCollectionView({
-      collection: this.cardCollection
-    });
-  },
-
-  start: function() {
-    Backbone.history.start({
-      pushState: true,
-      root: APP_ROOT
-    });
-  },
-
-  index: function() {
-    this.cardCollection.fetch();
-  },
-
-  show_card: function(id) {
-    // TODO: UGLY, make betters
-    var card = this.cardCollection.get(id);
-    var cardView = new CardView({ model: card});
-    $('#card-collection').html(cardView.render().el);
-  }
-}));
+var TadbitRouter = require('router');
 
 // Called when page is done loading
 $(function() {
   // Starts up our entire app
-  TadbitApp.start();
+  Tadbit = new TadbitRouter();
+  Tadbit.start();
+
 
   // Temp solution to add cards via form
   $('#add-submit').click( function() {
