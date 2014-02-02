@@ -26,7 +26,7 @@ module.exports = TadbitRouter = Backbone.Router.extend({
   },
 
   index: function() {
-    this.cardCollection.fetch();
+    this.cardCollection.fetch({ reset: true });
   },
 
   showCard: function(id) {
