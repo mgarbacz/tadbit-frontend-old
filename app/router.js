@@ -8,7 +8,8 @@ module.exports = TadbitRouter = Backbone.Router.extend({
   routes:  {
     '': 'index',
     'cards/:id': 'showCard',
-    'cards/new': 'newCard'
+    'cards/new': 'newCard',
+    '*error': 'showError' // match anything else and handle it as a 404 page
   },
 
   initialize: function() {
@@ -38,5 +39,9 @@ module.exports = TadbitRouter = Backbone.Router.extend({
 
   newCard: function() {
     console.log('New card page');
+  },
+
+  showError: function() {
+    alert('That pages doesn\'t exist!');
   }
 });
