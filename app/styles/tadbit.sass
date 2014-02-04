@@ -26,14 +26,18 @@ header
     color: #bb4444
 
 #main
+  margin-top: 20px
   padding-bottom: 100px
 
 .btn-primary
   background-color: #44bbbb
-  background-image: -webkit-linear-gradient(top, #7ccfcf, #308383)
+  border-color: darken(#44bbbb, 5%)
 
-  &:hover
-    background-color: #308383
+  &:hover,
+  &:active,
+  &:focus
+    background-color: darken(#44bbbb, 12%)
+    border-color: darken(#44bbbb, 14%)
 
 footer
   background-color: #44bbbb
