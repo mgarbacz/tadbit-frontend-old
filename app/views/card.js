@@ -1,6 +1,6 @@
 module.exports = CardView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'card span4',
+  className: 'card col-md-4',
   template: _.template( $('#card-template').html() ),
 
   events: {
