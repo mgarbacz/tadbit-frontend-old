@@ -8,41 +8,55 @@
   <link rel="stylesheet" type="text/css" href="/~michal/tadbit/public/ss/app.css" />
 </head>
 <body>
-  <div id="wrapper">
-    <header>
-      <div class="container">
-        <div class="row">
+  <header class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button"
+                data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
           <canvas class="span" id="logo" width="40" height="40"></canvas>
-          <h1>Tad<span id="bit">bit</span></h1>
-        </div>
+          <span id="tad">Tad</span><span id="bit">bit</span>
+        </a>
       </div>
-    </header>
-    <div id="main">
-      <div class="row">
-        <div id="card-collection" class="col-md-6">
-          <div class="collection-loading">
-            <p>Loading card data...</p>
-            <div class="spinner">
-              <div class="cube1"></div>
-              <div class="cube2"></div>
-            </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li><a href="/getting-started">Getting started</a></li>
+          <li><a href="/cards">Cards</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="main" class="container">
+    <div class="row">
+      <div id="card-collection" class="col-md-6">
+        <div class="collection-loading">
+          <p>Loading card data...</p>
+          <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
           </div>
         </div>
-        <div id="tag-collection" class="col-md-6">
-          <div class="collection-loading">
-            <p>Loading tag data...</p>
-            <div class="spinner">
-              <div class="cube1"></div>
-              <div class="cube2"></div>
-            </div>
+      </div>
+      <div id="tag-collection" class="col-md-6">
+        <div class="collection-loading">
+          <p>Loading tag data...</p>
+          <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="container">
-      </div>
-    </footer>
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>

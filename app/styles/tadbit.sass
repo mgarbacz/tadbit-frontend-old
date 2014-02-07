@@ -6,28 +6,38 @@ body
   background-color: #fafafa
   color: #555555
 
-#wrapper
-  min-height: 100%
-  position: relative
-
 header
   background-color: #44bbbb
   color: #fafafa
 
+  .navbar-brand,
+  .nav a
+    color: #fafafa
+    &:hover,
+    &:focus,
+    &:active
+      color: #ffffff
+      background-color: lighten(#44bbbb, 10%)
+
+  .navbar-brand
+    font-size: 30px
+    position: relative
+    height: 100%
   canvas#logo
-    vertical-align: middle
+    position: absolute
+    top: 0
+    left: 15px
+    margin: 5px 0
 
-  h1
-    display: inline-block
-    vertical-align: middle
-    margin: 10px 2px
-
+  span#tad
+    // Have to make up for canvas#logo being absolute
+    padding-left: 45px
+    color: #fafafa
   span#bit
     color: #bb4444
 
 #main
-  margin-top: 20px
-  padding-bottom: 100px
+  margin-top: 70px
 
 .btn-primary
   background-color: #44bbbb
@@ -38,14 +48,6 @@ header
   &:focus
     background-color: darken(#44bbbb, 12%)
     border-color: darken(#44bbbb, 14%)
-
-footer
-  background-color: #44bbbb
-  color: #fafafa
-  position: absolute
-  bottom: 0
-  width: 100%
-  height: 100px
 
 @import 'loading'
 @import 'collections'
