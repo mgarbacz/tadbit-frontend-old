@@ -1,17 +1,23 @@
+var LoadingTemplate = require('views/templates/loading'),
+    CardIndexTemplate = require('views/templates/card/index')
+
 module.exports = CardCollectionView = Backbone.View.extend({
   // Linking to element on the page
-  el: $('#card-collection'),
+  el: $('#main'),
+  template: CardIndexTemplate,
+  loadingTemplate: LoadingTemplate,
 
   initialize: function() {
+    $(this.el).html(this.loadingTemplate());
     this.collection.on('reset', this.render, this);
     this.collection.on('add', this.addCard, this);
   },
 
   render: function() {
-    // Clear in case
-    $(this.el).empty();
+    $(this.el).html(this.template());
     // Using addCard method to preserve context of 'this' in forEach
     this.collection.forEach(this.addCard, this);
+    // TODO clean up technical debt
   },
 
   addCard: function(card) {
