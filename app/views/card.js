@@ -1,7 +1,9 @@
+var CardTemplate = require('views/templates/card/show');
+
 module.exports = CardView = Backbone.View.extend({
-  tagName: 'ul',
-  className: 'card col-xs-6',
-  template: _.template( $('#card-template').html() ),
+  tagName: 'div',
+  className: 'col-sm-6 col-xs-12',
+  template: CardTemplate,
 
   events: {
     'click': 'display'
