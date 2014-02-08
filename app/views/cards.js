@@ -1,5 +1,5 @@
 var LoadingTemplate = require('views/templates/loading'),
-    CardIndexTemplate = require('views/templates/card/index')
+    CardIndexTemplate = require('views/templates/card/index');
 
 module.exports = CardCollectionView = Backbone.View.extend({
   // Linking to element on the page
