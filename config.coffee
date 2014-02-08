@@ -19,4 +19,7 @@ exports.config =
     sass:
       debug: 'comments'
 
+    jshint:
+      pattern: /^app\/.*\.js$/
+
   sourceMaps: true
