@@ -26,7 +26,7 @@ module.exports = CardView = Backbone.View.extend({
   },
 
   display: function() {
-    Backbone.history.navigate('cards/' + this.model.attributes._id, {
+    Backbone.history.navigate('/cards/' + this.model.attributes._id, {
       trigger: true
     });
   }
