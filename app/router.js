@@ -35,10 +35,12 @@ module.exports = TadbitRouter = Backbone.Router.extend({
   },
 
   showCard: function(id) {
-    // TODO: UGLY, make betters
-    var cardModel = this.cardCollection.get(id);
+    var cardModel = this.cardCollection.get(id) || new CardModel({ _id: id });
     var cardView = new CardView({ model: cardModel});
-    $('#card-collection').html(cardView.render().el);
+
+    // TODO: UGLY, make betters
+    $('#main').html(cardView.render().el);
+    cardModel.fetch();
   },
 
   newCard: function() {
