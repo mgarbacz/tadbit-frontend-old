@@ -8,7 +8,7 @@ module.exports = CardCollectionView = Backbone.View.extend({
   loadingTemplate: LoadingTemplate,
 
   initialize: function() {
-    $(this.el).html(this.loadingTemplate());
+    $(this.el).html(this.loadingTemplate({ item: 'card' }));
     this.collection.on('reset', this.render, this);
     this.collection.on('add', this.addCard, this);
   },
