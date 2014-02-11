@@ -2,6 +2,7 @@ var CardModel = require('models/card'),
     CardView = require('views/card'),
     CardCollection = require('models/cards'),
     CardCollectionView = require('views/cards'),
+    LoadingTemplate = require('views/templates/loading'),
     config = require('config');
 
 module.exports = TadbitRouter = Backbone.Router.extend({
@@ -10,6 +11,7 @@ module.exports = TadbitRouter = Backbone.Router.extend({
     'cards': 'indexCards',
     'cards/new': 'newCard',
     'cards/:id': 'showCard',
+    'tags': 'indexTags',
     '*error': 'showError' // match anything else and handle it as a 404 page
   },
 
@@ -46,6 +48,10 @@ module.exports = TadbitRouter = Backbone.Router.extend({
   newCard: function() {
     var NewCardTemplate = require('views/templates/card/new');
     $('#main').html(NewCardTemplate());
+  },
+
+  indexTags: function() {
+    $('#main').html(LoadingTemplate({ item: 'tag' }));
   },
 
   showError: function() {
