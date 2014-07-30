@@ -6,17 +6,6 @@ $(function() {
   Tadbit = new TadbitRouter();
   Tadbit.start();
 
-
-  // Temp solution to add cards via form
-  $('#add-submit').click( function() {
-    createCard($('#input-question').val(),
-               $('#input-answer').val(),
-               $('#input-difficulty').val(),
-               $('#input-tags').val());
-    // Making sure to reset the form when done
-    $('#add-reset').click();
-  });
-
   // Logo stuff, TODO move to its own file
   var logoCanvas = $('#logo')[0];
   var context = logoCanvas.getContext('2d');

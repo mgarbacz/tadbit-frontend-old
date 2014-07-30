@@ -17,7 +17,7 @@ module.exports = CardView = Backbone.View.extend({
   render: function() {
     // Setting the HTML to the template filled with the model's data
     console.log(this.model.toJSON());
-    $(this.el).html(this.template(this.model.toJSON()));
+    $(this.el).html(this.template(this.model.attributes));
     return this;
   },
 

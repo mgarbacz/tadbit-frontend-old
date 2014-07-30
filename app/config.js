@@ -12,7 +12,7 @@ env = (function() {
 
 config = {
   development: {
-    appRoot: '/~michal/tadbit/public/',
+    appRoot: '/',
     apiUrl: 'http://localhost:8124/cards'
   },
   production: {

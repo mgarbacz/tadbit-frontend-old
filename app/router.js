@@ -1,5 +1,6 @@
 var CardModel = require('models/card'),
     CardView = require('views/card'),
+    NewCardView = require('views/newcard'),
     CardCollection = require('models/cards'),
     CardCollectionView = require('views/cards'),
     LoadingTemplate = require('views/templates/loading'),
@@ -46,8 +47,10 @@ module.exports = TadbitRouter = Backbone.Router.extend({
   },
 
   newCard: function() {
-    var NewCardTemplate = require('views/templates/card/new');
-    $('#main').html(NewCardTemplate());
+    var newCardModel = new CardModel({});
+    var newCardView = new NewCardView({ model: newCardModel });
+
+    $('#main').html(newCardView.render().el);
   },
 
   indexTags: function() {
