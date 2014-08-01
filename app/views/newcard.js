@@ -17,7 +17,7 @@ module.exports = NewCardView = Backbone.View.extend({
         console.log(this.model);
         var newQuestion = $('#input-question').val();
         var newAnswer = $('#input-answer').val();
-        var newTags = $('#input-tags').val().split(',');
+        var newTags = $('#input-tags').val().replace(/,\s/g, ',').replace(/\s/g, '-').split(',');
         this.model.save({
             question: newQuestion,
             answer: newAnswer,
