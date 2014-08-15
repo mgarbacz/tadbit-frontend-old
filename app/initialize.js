@@ -6,23 +6,25 @@ $(function() {
     Tadbit = new TadbitRouter();
     Tadbit.start();
 
-    // Header on scroll stuff, TODO move to its own file
-    window.addEventListener('scroll', function(e) {
+    var handleScroll = function(event) {
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 70;
 
         if (distanceY > shrinkOn) {
-            $('header').addClass('shrink');
+            $('header').removeClass('unshrunk');
         } else {
-            $('header').removeClass('shrink');
+            $('header').addClass('unshrunk');
         }
-    });
+    };
+    // Header on scroll stuff, TODO move to its own file
+    window.addEventListener('scroll', handleScroll, false);
+    handleScroll({});
 
     // Logo stuff, TODO move to its own file
     var mainColor = '#eeff41';
     var pairColor = '#009688';
 
-    var logoCanvas = $('#logo')[0];
+    var logoCanvas = $('#logo-unshrunk')[0];
     var context = logoCanvas.getContext('2d');
 
     // 3/4ths of a circle, top exposed
@@ -70,7 +72,7 @@ $(function() {
     context.closePath();
 
     // Make tadpole eyes glint red on mouseover
-    $('#logo').mouseenter(function() {
+    $('#logo-unshrunk').mouseenter(function() {
         context.beginPath();
         context.fillStyle = '#aa0000';
         context.arc(34, 44, 4.5, 0, 2 * Math.PI, false);
@@ -94,7 +96,7 @@ $(function() {
     });
 
     // Logo stuff, TODO move to its own file
-    var logoShrinkCanvas = $('#logo-shrink')[0];
+    var logoShrinkCanvas = $('#logo')[0];
     var shrinkContext = logoShrinkCanvas.getContext('2d');
 
     // 3/4ths of a circle, top exposed
@@ -142,7 +144,7 @@ $(function() {
     shrinkContext.closePath();
 
     // Make tadpole eyes glint red on mouseover
-    $('#logo-shrink').mouseenter(function() {
+    $('#logo').mouseenter(function() {
         shrinkContext.beginPath();
         shrinkContext.fillStyle = '#aa0000';
         shrinkContext.arc(17, 22, 2.25, 0, 2 * Math.PI, false);
