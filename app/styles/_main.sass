@@ -25,11 +25,13 @@ header
 
   .nav a
     color: $color-bg
-    border-bottom: 3px inset transparent
+    border-bottom: 0 inset transparent
+    -webkit-transition: 0.3s border-bottom-width
     &:hover,
     &:focus,
     &:active
-      border-color: $color-accent-norm
+      border-bottom-color: $color-accent-norm
+      border-bottom-width: 4px
       background-color: initial
 
   canvas
@@ -49,6 +51,12 @@ header
 
   span#bit
     color: $color-accent-norm
+
+  .navbar-right
+    margin: 10px 0
+
+  .navbar-right button
+    width: 100%
 
   .navbar-toggle .icon-bar
     background-color: $color-bg
@@ -82,3 +90,14 @@ header
   &:focus
     background-color: darken($color-primary-norm, 12%)
     border-color: darken($color-primary-norm, 14%)
+
+.btn-accent
+  background-color: $color-primary-dark
+  border-color: darken($color-primary-dark, 5%)
+
+  &:hover,
+  &:active,
+  &:focus
+    background-color: darken($color-primary-dark, 12%)
+    border-color: darken($color-primary-dark, 14%)
+    color: $color-accent-dark
