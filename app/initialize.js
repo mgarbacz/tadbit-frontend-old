@@ -11,8 +11,8 @@ $(function() {
   var context = logoCanvas.getContext('2d');
 
   // Style for circle and tadpole
-  var mainColor = '#bb4444';
-  var pairColor = '#fafafa';
+  var mainColor = '#eeff41';
+  var pairColor = '#009688';
 
   // 3/4ths of a circle, top exposed
   context.strokeStyle = mainColor;
@@ -57,6 +57,29 @@ $(function() {
   context.arc(23, 22, 2, 0, 2 * Math.PI, false);
   context.fill();
   context.closePath();
+
+  // Make tadpole eyes glint red on mouseover
+  $('#logo').mouseenter(function() {
+    context.beginPath();
+    context.fillStyle = '#aa0000';
+    context.arc(17, 22, 2.25, 0, 2 * Math.PI, false);
+    context.arc(23, 22, 2.25, 0, 2 * Math.PI, false);
+    context.fill();
+    context.closePath();
+    window.setTimeout(function() {
+      context.fillStyle = mainColor;
+      context.beginPath();
+      context.arc(20, 20, 8, 0, 2 * Math.PI, false);
+      context.fill();
+      context.closePath();
+      context.beginPath();
+      context.fillStyle = pairColor;
+      context.arc(17, 22, 2, 0, 2 * Math.PI, false);
+      context.arc(23, 22, 2, 0, 2 * Math.PI, false);
+      context.fill();
+      context.closePath();
+    }, 600);
+  });
 
 });
 
