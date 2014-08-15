@@ -18,7 +18,7 @@ $(function() {
     };
     // Header on scroll stuff, TODO move to its own file
     window.addEventListener('scroll', handleScroll, false);
-    handleScroll({});
+    handleScroll();
 
     // Logo stuff, TODO move to its own file
     var mainColor = '#eeff41';
