@@ -25,13 +25,12 @@ header
 
   .nav a
     color: $color-bg
-    border-bottom: 0 inset transparent
-    -webkit-transition: 0.3s border-bottom-width
+    border-left: 0 solid $color-accent-norm
+    -webkit-transition: 0.3s border-width
     &:hover,
     &:focus,
     &:active
-      border-bottom-color: $color-accent-norm
-      border-bottom-width: 4px
+      border-width: 4px
       background-color: initial
 
   canvas
@@ -62,6 +61,11 @@ header
     background-color: $color-bg
 
 @media all and (min-width: 768px)
+  header
+    .nav a
+      border-bottom: 0 inset $color-accent-norm
+      border-left: none
+
   header.unshrunk
     height: 100px
     padding: 25px 0
