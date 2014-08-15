@@ -1,0 +1,63 @@
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+
+body
+  font-family: $font-family
+  background-color: $color-bg
+  color: $color-fg
+
+header
+  background-color: $color-primary-norm
+  color: $color-bg
+
+  .navbar-brand
+    color: $color-bg
+
+  .nav a
+    color: $color-bg
+    border-bottom: 3px inset transparent
+    &:hover,
+    &:focus,
+    &:active
+      border-color: $color-accent-norm
+      background-color: initial
+
+  .navbar-brand
+    font-size: 30px
+    position: relative
+    height: 100%
+
+  canvas#logo
+    position: absolute
+    top: 0
+    left: 15px
+    margin: 5px 0
+
+  span#tad
+    // Have to make up for canvas#logo being absolute
+    padding-left: 45px
+
+  span#bit
+    color: $color-accent-norm
+
+  .navbar-toggle .icon-bar
+    background-color: $color-bg
+
+#wrapper
+  margin-top: 70px
+
+.btn-primary
+  background-color: $color-primary-norm
+  border-color: darken($color-primary-norm, 5%)
+
+  &:hover,
+  &:active,
+  &:focus
+    background-color: darken($color-primary-norm, 12%)
+    border-color: darken($color-primary-norm, 14%)
