@@ -15,9 +15,15 @@ body
 header
   background-color: $color-primary-norm
   color: $color-bg
+  height: 100px
+  padding: 25px 0
 
   .navbar-brand
     color: $color-bg
+    font-size: 60px
+    position: relative
+    height: 100%
+    margin-right: 40px
 
   .nav a
     color: $color-bg
@@ -28,20 +34,20 @@ header
       border-color: $color-accent-norm
       background-color: initial
 
-  .navbar-brand
-    font-size: 30px
-    position: relative
-    height: 100%
-
-  canvas#logo
+  canvas
     position: absolute
     top: 0
     left: 15px
     margin: 5px 0
 
+  canvas#logo
+    display: inline-block
+    top: -20px
+  canvas#logo-shrink
+    display: none
+
   span#tad
-    // Have to make up for canvas#logo being absolute
-    padding-left: 45px
+    padding-left: 90px
 
   span#bit
     color: $color-accent-norm
@@ -49,8 +55,24 @@ header
   .navbar-toggle .icon-bar
     background-color: $color-bg
 
+header.shrink
+  height: auto
+  padding: 0
+
+  .navbar-brand
+    font-size: 30px
+    margin-right: 0
+
+  canvas#logo
+    display: none
+  canvas#logo-shrink
+    display: inline-block
+
+  span#tad
+    padding-left: 45px
+
 #wrapper
-  margin-top: 70px
+  margin-top: 100px
 
 .btn-primary
   background-color: $color-primary-norm
