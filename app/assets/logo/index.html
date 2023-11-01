@@ -19,7 +19,7 @@
       margin: 0;
     }
     span {
-      color: #bb4444;
+      color: #009999;
     }
   </style>
 </head>
@@ -44,8 +44,7 @@
   var oneTwentieth   = size / 20;     //20
 
   // Style for circle and tadpole
-  var mainColor = '#bb4444';
-  var pairColor = '#fafafa';
+  var mainColor = '#009999';
 
   // 3/4ths of a circle, top exposed
   context.strokeStyle = mainColor;
@@ -84,14 +83,14 @@
   context.fill();
   context.closePath();
 
-  // Tadpole eyes
+  // Tadpole eyes, using .clip to clearRect on just the define eye arcs
   context.beginPath();
-  context.fillStyle = pairColor;
   context.arc(fiveHalves + (oneTwentieth / 2), fiveThirds - oneTwentieth,
               oneTwentieth, 0, 2 * Math.PI, false);
   context.arc(fiveThirds - (oneTwentieth / 2), fiveThirds - oneTwentieth, 
               oneTwentieth, 0, 2 * Math.PI, false);
-  context.fill();
+  context.clip();
+  context.clearRect(0,0,size,size);
   context.closePath();
 </script>
 </html>
